@@ -1,25 +1,41 @@
-# Telecom Customer Churn Dashboard (Power BI)
+# Telecom Customer Churn Dashboard
 
-An interactive, 4-page Power BI report that analyzes **why customers leave, how much revenue that costs, and where retention campaigns should focus**. The design follows the e& (Etisalat) brand look, with a dark theme and a light-theme overview.
+A 4-page Power BI report that shows **why telecom customers leave, how much revenue it costs, and where retention efforts should focus**. It is built on a star-schema data model and styled with the e& (Etisalat) brand look.
 
-> **Note:** The dataset is **synthetic**: 7,043 simulated customer records, not real customer data. This is a portfolio project and is not affiliated with e& or Etisalat.
+> **Data disclaimer:** The dataset is **synthetic** (7,043 simulated customer records, no real customer data). This is a portfolio project and is not affiliated with e& or Etisalat.
 
-![Overview (dark theme)](images/01-overview-dark.png)
+![Dashboard overview](images/01-overview-dark.png)
 
----
+## Contents
 
-## Business questions answered
+- [Project goal](#project-goal)
+- [Dashboard pages](#dashboard-pages)
+- [Headline KPIs](#headline-kpis)
+- [Key findings](#key-findings)
+- [Recommendations](#recommendations)
+- [Data model](#data-model)
+- [Getting started](#getting-started)
+- [Repository structure](#repository-structure)
 
-Every chart is titled as a question and has a one-line answer under it, so a stakeholder can read the story without any training.
+## Project goal
 
-| Page | Focus | Example questions |
-|---|---|---|
-| **Overview** | Churn behavior | Are short-term contracts driving customer loss? When do customers churn most? Which internet service is highest risk? Does auto-pay improve retention? |
-| **Revenue Impact & Risk Mitigation** | Money lost and where to act | Which contract types, services and payment methods cost the most revenue? Are we losing high-value customers? Where should retention campaigns focus? |
-| **Customer Demographics & Value Bundling Optimization** | Who churns and the effect of bundling | Does family status predict loyalty? Does the number of add-on services affect retention? Which add-ons carry the most risk when missing? |
-| **Overview Bright** | Light-theme variant of the Overview page | Same content in a light theme |
+Customer churn is one of the costliest problems for a telecom operator. This dashboard turns raw customer and billing data into clear answers for business stakeholders:
 
----
+1. **Who** is leaving, and at what point in their lifecycle?
+2. **What** does churn cost in revenue?
+3. **Which** products, contracts and behaviors drive it?
+4. **Where** should retention campaigns focus first?
+
+Each visual is titled as a business question with a one-line answer beneath it, so the story can be read without any explanation.
+
+## Dashboard pages
+
+| # | Page | What it covers |
+|---|------|----------------|
+| 1 | **Overview** | Churn by contract type, tenure, internet service and payment method, plus the effect of tech support and phone service |
+| 2 | **Revenue Impact & Risk Mitigation** | Revenue lost by contract, service and payment method; churn across customer value tiers; where to focus retention campaigns |
+| 3 | **Customer Demographics & Value Bundling Optimization** | Churn by family status, gender and billing type; the effect of add-on services, bundles and service combinations |
+| 4 | **Overview Bright** | The Overview page in a light theme |
 
 ## Headline KPIs
 
@@ -29,66 +45,67 @@ Every chart is titled as a question and has a one-line answer under it, so a sta
 | Churned customers | 1,869 |
 | Churn rate | 26.5% |
 | Total revenue | $16.06M |
-| Revenue lost to churn | $2.86M (17.83%) |
-| High-value churned customers | 255 |
+| Revenue lost to churn | $2.86M (17.83% of total) |
+| High-value customers churned | 255 |
 | Revenue at risk | $136.45K |
 
 ## Key findings
 
-- **Contract type is the strongest lever.** Month-to-month customers churn at **42.71%**, versus 11.27% on one-year and about 3% on two-year contracts. Month-to-month accounts for over 67% of lost revenue ($1.93M).
-- **The first year is the danger zone.** Churn peaks at **47.4% in months 0–12** and falls steadily with tenure.
-- **Fiber optic is the biggest leak.** It has a 41.89% churn rate and accounts for $2.48M of lost revenue. Active month-to-month fiber customers are the largest forward-looking risk ($85K).
-- **Payment method matters.** Electronic-check customers churn at **45.3%**, against under 17% for automatic payment. They also account for over 54% of lost revenue.
-- **Tech support and add-ons retain customers.** Having tech support cuts churn from 41.6% to 15.2%. Churn falls from 50.3% with no add-ons to under 6% at the highest add-on counts.
-- **Family status and billing delivery.** Single customers churn at 34.2% against 14.2% for families. Paperless-billing customers churn at 33.6%, roughly double the rate of those without it.
-- **Gender and phone service are not meaningful drivers.** Churn is nearly identical across these groups.
+| Driver | What the data shows |
+|---|---|
+| **Contract type** | Month-to-month customers churn at **42.71%**, against 11.27% on one-year and about 3% on two-year contracts. Month-to-month accounts for over 67% of lost revenue ($1.93M). |
+| **Tenure** | Churn peaks at **47.4% in the first 12 months** and falls steadily as tenure grows. |
+| **Internet service** | Fiber optic churns at **41.89%** and accounts for $2.48M of lost revenue. Active month-to-month fiber customers are the largest forward-looking risk ($85K). |
+| **Payment method** | Electronic-check customers churn at **45.3%**, against under 17% for automatic payment, and make up over 54% of lost revenue. |
+| **Support and add-ons** | Tech support cuts churn from 41.6% to 15.2%. Churn drops from 50.3% with no add-ons to under 6% for customers with the most. |
+| **Household and billing** | Single customers churn at 34.2% against 14.2% for families. Paperless-billing customers churn at 33.6%, about double the rate of the rest. |
+| **Not a driver** | Gender and phone service show almost no difference in churn. |
+
+## Recommendations
+
+Based on the findings above:
+
+1. **Target month-to-month fiber customers first.** They are the highest-risk and highest-value segment for retention offers.
+2. **Invest in the first year.** Onboarding and early-life engagement matter most when churn is highest.
+3. **Move customers to contracts and auto-pay.** Offer incentives to switch from month-to-month plans and manual electronic checks.
+4. **Promote tech support and bundled add-ons.** Both are linked to much lower churn.
+5. **Do not segment by gender or phone service.** They don't separate churners from stayers.
 
 ## Screenshots
 
 | Revenue Impact & Risk Mitigation | Customer Demographics & Bundling |
 |---|---|
-| ![Revenue impact](images/02-revenue-impact-risk-mitigation.png) | ![Demographics and bundling](images/03-customer-demographics-bundling.png) |
+| ![Revenue impact and risk mitigation](images/02-revenue-impact-risk-mitigation.png) | ![Customer demographics and bundling](images/03-customer-demographics-bundling.png) |
 
-**Light-theme overview**
+**Light theme**
 
-![Overview (light theme)](images/04-overview-light.png)
-
----
+![Overview in light theme](images/04-overview-light.png)
 
 ## Data model
 
 The report uses a **star schema**:
 
-- `fact_Billing_Churn` is the fact table, with billing and churn data per customer
-- `dim_Customer` holds customer attributes
-- `dim_Contract` holds contract details
-- `dim_Service` and `dim_Service_Unpivoted` hold service and add-on details
-- `_Measures` is a dedicated table for DAX measures
+| Table | Role |
+|---|---|
+| `fact_Billing_Churn` | Fact table with billing and churn data per customer |
+| `dim_Customer` | Customer attributes |
+| `dim_Contract` | Contract details |
+| `dim_Service` / `dim_Service_Unpivoted` | Services and add-ons |
+| `_Measures` | Dedicated table for DAX measures |
 
-## Tools
+**Built with:** Power BI Desktop, DAX, a custom crimson theme, bookmarks and a filter panel.
 
-- **Power BI Desktop** for the data model, DAX measures, report design and a custom crimson theme
-- **DAX** for churn rate, revenue lost, high-value churn and revenue-at-risk measures
-- Bookmarks and a filter panel for slicing by account profile and services
-
-## How to use
+## Getting started
 
 1. Clone or download this repository.
-2. Open `Telecom_Churn.pbix` in [Power BI Desktop](https://powerbi.microsoft.com/desktop/) (free).
-3. Use the filter button at the top-left of each page to slice the data.
+2. Open `Telecom_Churn.pbix` in [Power BI Desktop](https://powerbi.microsoft.com/desktop/) (free for Windows).
+3. Use the filter button at the top left of each page to slice the data.
 
 ## Repository structure
 
 ```
 Telecom-Churn-Dashboard/
-├── Telecom_Churn.pbix     # Power BI report file
-├── images/                # Dashboard screenshots
+├── Telecom_Churn.pbix   # Power BI report
+├── images/              # Dashboard screenshots
 └── README.md
 ```
-
----
-
-## Author
-
-**Mohamed Al Nady**, data analyst focused on SQL, Power BI and DAX.
-GitHub: [Nady-07](https://github.com/Nady-07)
