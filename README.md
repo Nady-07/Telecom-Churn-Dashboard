@@ -1,5 +1,12 @@
 # Telecom Customer Churn Dashboard
 
+![Power BI](https://img.shields.io/badge/POWER_BI-4_PAGES-0B0B0B?style=flat-square&labelColor=1D1D1D)
+![DAX](https://img.shields.io/badge/DAX-STAR_SCHEMA-1D1D1D?style=flat-square&labelColor=0B0B0B)
+![Domain](https://img.shields.io/badge/DOMAIN-TELECOM_CHURN-3D3D3D?style=flat-square&labelColor=1D1D1D)
+![License](https://img.shields.io/badge/LICENSE-MIT-3D3D3D?style=flat-square&labelColor=1D1D1D)
+
+[Live Portfolio ↗](https://nady-07.github.io/portfolio/#portfolio) · [Download .PBIX File](./Telecom_Churn.pbix) · [LinkedIn](https://www.linkedin.com/in/mohamed-alnady-52b87123b)
+
 A 4-page Power BI report that shows **why telecom customers leave, how much revenue it costs, and where retention efforts should focus**. It is built on a star-schema data model and styled with the e& (Etisalat) brand look.
 
 > **Data disclaimer:** The dataset is **synthetic** (7,043 simulated customer records, no real customer data). This is a portfolio project and is not affiliated with e& or Etisalat.
@@ -107,5 +114,17 @@ The report uses a **star schema**:
 Telecom-Churn-Dashboard/
 ├── Telecom_Churn.pbix   # Power BI report
 ├── images/              # Dashboard screenshots
+├── LICENSE
 └── README.md
 ```
+
+---
+
+## License
+
+Licensed under the [MIT License](./LICENSE).
+
+---
+
+**Mohamed Al Nady** — *Data & Business Intelligence Analyst*  
+[Live Portfolio ↗](https://nady-07.github.io/portfolio/) · [LinkedIn](https://www.linkedin.com/in/mohamed-alnady-52b87123b) · [Email](mailto:mohamednady0@outlook.com) · [GitHub](https://github.com/Nady-07)
